@@ -1,0 +1,39 @@
+/* 헤더 스타일 */
+.header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* 푸터 스타일 */
+.footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #555555;
+}
+
+/* 추가적인 스타일을 여기에 작성할 수 있습니다 */
