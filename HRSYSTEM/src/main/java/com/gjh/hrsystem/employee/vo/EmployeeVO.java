@@ -1,18 +1,20 @@
 package com.gjh.hrsystem.employee.vo;
 
-public class EmployeeVO {
+import com.gjh.hrsystem.common.vo.DefaultVO;
+
+public class EmployeeVO extends DefaultVO {
 	
-	private int no;
+	private int no; 			// 번호
 	
-	private String name;
+	private String name; 		// 이름
 	
-	private char gender;
+	private char gender; 		// 성별
 	
-	private String department;
+	private String department; 	// 소속부서
 	
-	private int salary;
+	private int salary; 		// 급여
 	
-	private String hireDate;
+	private String hireDate; 	// 입사일
 
 	
 	public int getNo() {

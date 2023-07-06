@@ -7,8 +7,8 @@
     <!-- 오라클 설정 -->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521/xe"/>
-        <property name="username" value="javauser"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+        <property name="username" value="c##javauser"/>
         <property name="password" value="java1234"/>
     </bean> 
     

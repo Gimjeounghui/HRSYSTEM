@@ -41,7 +41,13 @@ public class HomeController {
 		
 		logger.info("메인 페이지 실행");
 		
-		return "/mainLayout.tiles";	
+		return "/home.tiles";	
+	}
+	
+	@RequestMapping(value = "/sampleBoard", method = RequestMethod.GET)
+	public String sampleBoard() {
+		
+		return "/sampleBoard.tiles";	
 	}
 
 	@RequestMapping(value = "/test")

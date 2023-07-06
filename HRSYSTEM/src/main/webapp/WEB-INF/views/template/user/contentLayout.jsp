@@ -21,9 +21,12 @@
         <!-- hr프로젝트의 전반적인 CSS 레이아웃 -->
         <link rel="stylesheet" href="/resources/css/hrLayout.css">
         
+        <!-- hr프로젝트의 전반적인 공통 js -->
+        <script type="text/javascript" src="/resources/js/common/commonUtil.js" ></script>
     </head>
     
     <style>
+
 	   .nav-sidebar li {
             background-color: #d1e0f5;
         }
@@ -37,30 +40,25 @@
 	        padding: 10px;
 	        margin-top: 20px;
     	}	
+	
 	</style>
     
 	<body>
 		<!-- header -->
         <div class="container">
-		    <div class="row">
-		      <!-- 헤더 네비게이션 바 -->
-		      <nav class="navbar navbar-default">
-		        <!-- 네비게이션 바 콘텐츠 -->
-		        <tiles:insertAttribute name="header" />
-		      </nav>
+	    	<div class="row">
+		      	<!-- 헤더 네비게이션 바 -->
+		      	<nav class="navbar navbar-default">
+		        	<!-- 네비게이션 바 콘텐츠 -->
+			        <tiles:insertAttribute name="header" />
+		      	</nav>
 		    </div>
 		
 		    <div class="row">
-			    <div class="col-md-2">
-		            <h4 class="sidebar-title">왼쪽 사이드바 메뉴</h4>
-		            <ul class="nav nav-sidebar">
-		                <li><a href="#">메뉴 1</a></li>
-		                <li><a href="#">메뉴 2</a></li>
-		                <li><a href="#">메뉴 3</a></li>
-		                <li><a href="#">메뉴 4</a></li>
-		            </ul>
-			    </div>
-			    
+		    	
+		    	<!-- 왼쪽 사이드바 메뉴 -->
+		    	<tiles:insertAttribute name="leftSide" />
+		    	
 			    <div class="col-md-10 content-container">
 				    <div class="col-md-10">
 				        <!-- 컨텐츠 영역 -->
@@ -71,12 +69,11 @@
 			    </div>
 			</div>
 		
-		    <div class="row">
-		      <div class="col-md-12">
-		        <tiles:insertAttribute name="footer" />
-		      </div>
-		    </div>
+			<div class="row">
+	      		<div class="col-md-12">
+	        		<tiles:insertAttribute name="footer" />
+		      	</div>
+			</div>
 		</div>
-        
 	</body>
 </html>
