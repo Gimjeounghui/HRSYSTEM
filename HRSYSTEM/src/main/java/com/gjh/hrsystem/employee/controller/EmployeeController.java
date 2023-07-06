@@ -21,6 +21,8 @@ import com.gjh.hrsystem.employee.vo.EmployeeVO;
 @RequestMapping("/employee")
 public class EmployeeController {
 
+	// LoggerFactory는 Logger 객체를 생성하기 위해 사용되는 팩토리 클래스
+	// getLogger 메서드는 로깅을 위한 Logger 객체를 가져옴
 	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
 	@Autowired
@@ -41,9 +43,9 @@ public class EmployeeController {
 			int pageSize = vo.getPageSize(); 			// 페이지 리스트에 게시되는 페이지 건수
 
 			// 게시물 조회 범위 연산
-			// HashMap : 중복과 순서가 허용되지 않고, null 허용
 			// 현재페이지 페이지에서 보여주는 게시물 수
-			HashMap<String, Integer> rangeMap = boardUtil.calcDataRange(currentPageNo, recordCountPerPage); // returnMap
+			//                                                           현재 페이지 번호    , 한 페이지당 게시되는 게시물 건 수
+			HashMap<String, Integer> rangeMap = boardUtil.calcDataRange(currentPageNo, recordCountPerPage);
 			vo.setStart(rangeMap.get("firstRecordIndex"));
 			vo.setEnd(rangeMap.get("lastRecordIndex"));
 
@@ -52,7 +54,7 @@ public class EmployeeController {
 
 			// 검색된 결과가 있는지 체크
 			if (employeeList.size() > 0) {
-				// 전체 검색 결과 게시물 건 수
+				// 전체 검색 결과 게시물 건 수. TotalRecordCount : 총 게시물 건
 				totalRecordCount = employeeList.get(0).getTotalRecordCount();
 			}
 

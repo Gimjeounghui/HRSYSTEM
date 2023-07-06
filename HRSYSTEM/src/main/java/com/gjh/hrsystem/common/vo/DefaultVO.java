@@ -3,9 +3,9 @@ package com.gjh.hrsystem.common.vo;
 public class DefaultVO {
 
 	private int no; 				// 번호
-	private int end; 				// 검색할 마지막 번호
 	private int start; 				// 검색할 시작 번호
-	private int rnum; 				// 검색 되었을 때의 몇번째 번호인가 확인하는 번호
+	private int end; 				// 검색할 마지막 번호
+	private int rnum; 				// 검색 되었을 때 몇번째 번호인지 확인하는 번호
 	private int currentPageNo; 		// 현재 페이지 No
 	private int totalRecordCount; 	// 전체 게시물 건 수
 	private int totalPageCount; 	// 총 페이지의 갯수
@@ -15,7 +15,7 @@ public class DefaultVO {
 	private String sortType; 		// 정렬 방식
 	private String regDate; 		// 등록일
 	private String modDate; 		// 수정일
-	private String procFlag; 		// add,mod,del 구분값(추가, 수정, 삭제)
+	private String procFlag; 		// 추가(add), 수정(mod), 삭제(del) 구분값
 
 	
 	public String getProcFlag() {

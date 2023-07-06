@@ -8,7 +8,7 @@
 	
 		});
 		
-		//검색버튼 눌렀을시
+		// 검색버튼 눌렀을 시
 		function searchBtn() {
 	
 			var $form = $('#searchForm');
@@ -31,6 +31,8 @@
 	        	<div class="main_content">
 	            	<p>사원검색</p>
 	                <div class="container">
+	                
+	                	<!-- 검색박스 부분 -->
 		  				<div class="row">
 		    				<div class="col-md-6">
 					      		<div class="form-inline">
@@ -56,11 +58,13 @@
 						      	</div>
 						    </div>
 					  	</div>
-						  
+						
+						<!-- 게시판 컬럼과 데이터 부분  --> 
 					  	<div class="row">
 					    	<div class="col-md-8">
 					      		<div class="table-responsive">
 							        <table class="table table-striped">
+							        	<!-- 게시판 컬럼 -->
 							        	<thead>
 								            <tr>
 							            		<th scope="col" class="th-num">번호</th>
@@ -71,29 +75,32 @@
 												<th scope="col" class="th-hireDate">입사일</th>
 								            </tr>
 							          	</thead>
+							          	<!-- 게시판 데이터 부분 -->
 							          	<tbody>
-							          	<!-- fn:legth(item) = item이 배열이나 컬렉션이면 요소의 개수, 문자열이면 문자의 갯수 반환 -->
-										<c:if test="${fn:length(employeeList) == 0}">
-											<td align="center" colspan="6">조회된 항목이없습니다.</td>
-										</c:if>
-			
-										<c:forEach var="list" items="${employeeList}">
-											<tr>
-												<td>${list.no}</td>
-												<td>${list.name}</td>
-												<td>${list.gender}</td>
-												<td>${list.department}</td>
-												<td>${list.salary}</td>
-												<td>${list.hireDate}</td>
-											</tr>
-										</c:forEach>
+								          	<!-- fn:legth(item) = item이 배열이나 컬렉션이면 요소의 개수, 문자열이면 문자의 갯수 반환 -->
+											<c:if test="${fn:length(employeeList) == 0}">
+												<td align="center" colspan="6">조회된 항목이없습니다.</td>
+											</c:if>
+				
+											<c:forEach var="list" items="${employeeList}">
+												<tr>
+													<td>${list.no}</td>
+													<td>${list.name}</td>
+													<td>${list.gender}</td>
+													<td>${list.department}</td>
+													<td>${list.salary}</td>
+													<td>${list.hireDate}</td>
+												</tr>
+											</c:forEach>
 							          	</tbody>
 							        </table>
 						      	</div>
 						    </div>
 					    </div>
 						
-						<br/><br/>
+						<br/>
+						<br/>
+						
 						<!-- 페이징 처리부분 -->
 					  	<div class="row">
 					    	<div class="col-md-8 text-center">
@@ -112,7 +119,7 @@
 							        	</li>
 							        </c:if>
 							        
-							        <!-- 페이지리스트의 첫페이지 번호 begin, 페이지 리스트의 마지막 페이지 번호 end -->
+							        <!-- 페이지 리스트의 첫페이지 번호 begin, 페이지 리스트의 마지막 페이지 번호 end -->
 					                <c:forEach var="i" begin="${pagerMap['firstPageNoOnPageList']}" end="${pagerMap['lastPageNoOnPageList']}" step="1">
 								        <li class="<c:if test="${i == pagerMap['currentPageNo']}"> active </c:if>">
 								        	<a href="javascript:movePage('searchForm', ${i})">${i}</a>
@@ -143,5 +150,6 @@
 	    <div id="contentWrap">
 	        <a href="" style="display:block; text-align:center; margin:40px 0;">&nbsp;</a>
 	    </div>
+	    
     </div>
 </body>

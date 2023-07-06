@@ -9,7 +9,7 @@
 	<select id="selectEmployeeList" resultType="employeeVO" parameterType="employeeVO">
 
       SELECT
-          BOARD2.*
+          BOARD2.* <!-- 최종결과로 반환될 데이터 -->
       FROM(
           SELECT
               COUNT(*) OVER() AS totalRecordCount,
@@ -17,6 +17,7 @@
           FROM(
                  SELECT
                         ROW_NUMBER() OVER (ORDER BY NO DESC) AS rnum
+                        <!-- NO필드를 기준으로 내림차순 정렬하여 각 행에 순서번호(rum) 할당 -->
                    
                       ,NO
                       ,NAME
@@ -26,14 +27,14 @@
                       ,HIREDATE
                       
                    FROM   EMPLOYEE
-                   WHERE  1=1
+                   WHERE  1=1 
                    
                    <if test="name != null and name != '' ">
                       AND NAME LIKE '%' || #{name} || '%'
                    </if>
                   
-                ) BOARD1
-         ) BOARD2
+                ) BOARD1 <!-- 페이지네이션을 위해 필요한 전체 레코드(totalRecordCount)수와 원하는 데이터 검색 -->
+         ) BOARD2 <!-- 페이지네이션을 구현하기 위한 서브쿼리 -->
          WHERE   BOARD2.RNUM BETWEEN #{start} AND #{end}
          
 	</select>

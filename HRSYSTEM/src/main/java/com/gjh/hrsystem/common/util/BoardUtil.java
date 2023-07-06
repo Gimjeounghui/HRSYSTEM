@@ -10,7 +10,7 @@ public class BoardUtil {
 	private static final Logger logger = LoggerFactory.getLogger(BoardUtil.class);
 	
 	private final int defaultRecordCountPerPage = 10; // 한 페이지당 게시되는 게시물 건 수
-	private final int defaultPageSize = 5; 		      // 페이지 리스트에 게시되는 페이지 버튼 건수 
+	private final int defaultPageSize = 5; 		      // 한 페이지당 게시되는 페이지 버튼 갯수 
 	
 	/*
 	 * 게시판 페이징 구성에 필요한 수치들을 연산
@@ -21,6 +21,7 @@ public class BoardUtil {
 	 */
 	public HashMap<String, Integer> calcBoardPagerElement(int curPageNo, int totalRecordCount, int recordCountPerPage, int pageSize) {
 
+		// curPageNo가 1이거나 보다 작으면 1
 		int currentPageNo = curPageNo <= 1 ? 1 : curPageNo;
 		recordCountPerPage = recordCountPerPage < 1 ? defaultRecordCountPerPage : recordCountPerPage;
 		pageSize = pageSize < 1 ? defaultPageSize : pageSize;
@@ -57,7 +58,6 @@ public class BoardUtil {
 		
 			lastPageNoOnPageList = totalPageCount;
 			nextPageNoOnPageList = totalPageCount;
-		
 		}
 		
 		logger.debug("  ");
@@ -86,7 +86,7 @@ public class BoardUtil {
 	}
 	
 	/*
-	 * 게시물 조회 범위 연산.
+	 * 게시물 조회 범위 연산
 	 * curPageNo = 현재 페이지 번호
 	 * recordCountPerPage = 한 페이지당 게시되는 게시물 건 수
 	 * pageSize = 페이지 리스트에 게시되는 페이지 건수
@@ -97,7 +97,7 @@ public class BoardUtil {
 		logger.debug("현재 페이지 번호 : " + curPageNo);
 		logger.debug("한 페이지당 게시되는 게시물 건 수 : " + recordCountPerPage);
 		
-		// sharingList 폐이지 처음 진입 시 curPageNo가 0이면 (폐이지 버튼을 클릭하지 않았기 때문에) 1 폐이지로 처리하는 코드
+		// 폐이지 처음 진입 시 curPageNo가 0이이면 (폐이지 버튼을 클릭하지 않았기 때문에) 1 폐이지로 처리하는 코드
 		int currentPageNo = curPageNo <= 1 ? 1 : curPageNo;
 		       
 		// 혹시라도 defaultRecordCountPerPage (한 페이지당 게시되는 게시물 건 수)가 1미만(=0) 일 때와 1초과(=2)일 때 세팅하는 부분
@@ -105,7 +105,7 @@ public class BoardUtil {
 		
 		logger.debug("");
 		logger.debug("- - AFTER INIT - -");
-		logger.debug("현재 페이지 번호 : " + curPageNo);
+		logger.debug("현재 페이지 번호  : " + curPageNo);
 		logger.debug("한 페이지당 게시되는 게시물 건 수 : " + recordCountPerPage);
 		logger.debug("");
 		
