@@ -16,7 +16,10 @@ public class DefaultVO {
 	private String regDate; 		// 등록일
 	private String modDate; 		// 수정일
 	private String procFlag; 		// 추가(add), 수정(mod), 삭제(del) 구분값
-
+	
+	// 검색조건 관련
+	private String searchSelect1;
+	private String searchInput1;   
 	
 	public String getProcFlag() {
 		return procFlag;
@@ -128,5 +131,21 @@ public class DefaultVO {
 
 	public void setNo(int no) {
 		this.no = no;
+	}
+
+	public String getSearchSelect1() {
+		return searchSelect1;
+	}
+
+	public void setSearchSelect1(String searchSelect1) {
+		this.searchSelect1 = searchSelect1;
+	}
+
+	public String getSearchInput1() {
+		return searchInput1;
+	}
+
+	public void setSearchInput1(String searchInput1) {
+		this.searchInput1 = searchInput1;
 	}
 }

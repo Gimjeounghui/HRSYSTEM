@@ -8,9 +8,9 @@
 	
 		});
 		
-		// 검색버튼 눌렀을 시
+		// 검색버튼 눌렀을 시(검색조건과 값을 가져가야함)
 		function searchBtn() {
-	
+			
 			var $form = $('#searchForm');
 			$form.attr('action','/employee/employeeList');
 			$form.submit();
@@ -42,15 +42,15 @@
 								        
 								        <div class="form-group">
 							          		<label for="search1"></label>
-								          	<select class="form-control" id="search1">
-									            <option>이름</option>
-									            <option>부서명</option>
-									            <option>급여</option>
+								          	<select class="form-control" id="searchSelect1" name="searchSelect1">
+									            <option value="A" ${searchVO.searchSelect1 eq 'A' ? 'selected' : ''}>이름</option>
+									            <option value="B" ${searchVO.searchSelect1 eq 'B' ? 'selected' : ''}>부서명</option>
+									            <option value="C" ${searchVO.searchSelect1 eq 'C' ? 'selected' : ''}>급여</option>
 								          	</select>
 								        </div>
 								        <div class="form-group">
 									        <label for="search2"></label>
-									        <input type="text" class="form-control" id="search2">
+									        <input type="text" class="form-control" id="searchInput1" name="searchInput1" value="${searchVO.searchInput1}">
 								        </div>
 								        
 								        <button type="button" class="btn btn-primary" onclick="searchBtn('/employee/employeeList')">검색</button>

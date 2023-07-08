@@ -41,17 +41,16 @@
 										<input type="hidden" name="currentPageNo" id="currentPageNo" value="${pagerMap['currentPageNo']}">
 								        
 								        <div class="form-group">
-							          		<label for="search1">검색조건1:</label>
-								          	<select class="form-control" id="search1">
-									            <option>옵션 1</option>
-									            <option>옵션 2</option>
-									            <option>옵션 3</option>
+							          		<label for="search1"></label>
+								          	<select class="form-control" id="searchSelect1" name="searchSelect1">
+									            <option value="A" ${searchVO.searchSelect1 eq 'A' ? 'selected' : ''}>부서코드</option>
+									            <option value="B" ${searchVO.searchSelect1 eq 'B' ? 'selected' : ''}>부서명</option>
 								          	</select>
 								        </div>
 								        <div class="form-group">
-									        <label for="search2">검색조건2:</label>
-									        <input type="text" class="form-control" id="search2">
-								        </div>
+									        <label for="search2"></label>
+									        <input type="text" class="form-control" id="searchInput1" name="searchInput1" value="${searchVO.searchInput1}">
+					  					</div>
 								        
 								        <button type="button" class="btn btn-primary" onclick="searchBtn('/department/departmentList')">검색</button>
 							        </form>

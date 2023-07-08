@@ -8,4 +8,5 @@ public interface EmployeeMapper {
 	
 	public List<EmployeeVO> selectEmployeeList(EmployeeVO vo);
 
+	public EmployeeVO selectValueRslt(EmployeeVO vo);
 }

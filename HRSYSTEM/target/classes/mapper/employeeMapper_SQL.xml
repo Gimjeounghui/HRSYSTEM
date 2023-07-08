@@ -59,9 +59,25 @@
 				ON A.DEP_CODE = B.DEP_CODE
 
 				WHERE 1=1
+				
+               		<if test='searchSelect1 != null and searchSelect1 != "" '>
+						<choose>
+							<when test='searchSelect1 == "A" '>
+								/* 이름 검색 */
+                   				AND EMP_NM LIKE '%' || #{searchInput1} || '%'		
+							</when>
+							<when test='searchSelect1 == "B" '>
+								/* 부서명 검색 */
+								AND DEP_NM LIKE '%' || #{searchInput1} || '%' 
+							</when>
+							<when test='searchSelect1 == "C" '>
+								/* 급여 검색 */
+								AND EMP_SALARY = #{searchInput1}
+							</when>
+							<otherwise>
+							</otherwise>
+						</choose>
                		
-               		<if test="depCode != null and depCode != '' ">
-                   		AND DEP_CODE LIKE '%' || #{depCode} || '%'
                   	</if>
                   
             ) BOARD1	

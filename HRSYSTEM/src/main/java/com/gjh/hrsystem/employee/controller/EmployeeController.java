@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gjh.hrsystem.common.util.BoardUtil;
 import com.gjh.hrsystem.employee.service.EmployeeService;
@@ -28,7 +29,7 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@RequestMapping(value = "/employeeList")
+	@RequestMapping(value="/employeeList")
 	public String employeeList(@ModelAttribute("searchVO") EmployeeVO vo, Model model, HttpSession session) {
 
 		// 게시판 UTIL
