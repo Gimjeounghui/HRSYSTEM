@@ -14,6 +14,9 @@
 		<!--  employeeVO 별칭 -->
 		<typeAlias alias="employeeVO" type="com.gjh.hrsystem.employee.vo.EmployeeVO"/>
 
+		<!-- departmentVO 별칭 -->
+		<typeAlias alias="departmentVO" type="com.gjh.hrsystem.department.vo.DepartmentVO"/>
+
     </typeAliases>
 
 </configuration>

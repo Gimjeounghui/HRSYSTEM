@@ -12,14 +12,14 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
       		</button>
-      		<a class="navbar-brand" href="#">Logo</a>
+      		<a class="navbar-brand" href="#">김정희 HR SYSTEM</a>
     	</div>
     	<div class="collapse navbar-collapse" id="navbar-collapse">
       		<ul class="nav navbar-nav">
-		        <li class="active"><a href="#">Home</a></li>
-		        <li><a href="#">About</a></li>
-		        <li><a href="#">Services</a></li>
-		        <li><a href="#">Contact</a></li>
+		        <li class="active"><a href="#">회사정보</a></li>
+		        <li><a href="#">근무일정</a></li>
+		        <li><a href="#">출퇴근기록</a></li>
+		        <li><a href="#">휴가관리</a></li>
       		</ul>
     	</div>
 	</div>

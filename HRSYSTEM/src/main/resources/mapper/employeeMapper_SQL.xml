@@ -7,35 +7,66 @@
 	<!-- 나눔상품 리스트 쿼리 -->
 
 	<select id="selectEmployeeList" resultType="employeeVO" parameterType="employeeVO">
-
-      SELECT
-          BOARD2.* <!-- 최종결과로 반환될 데이터 -->
-      FROM(
-          SELECT
-              COUNT(*) OVER() AS totalRecordCount,
-              BOARD1.*
-          FROM(
-                 SELECT
-                        ROW_NUMBER() OVER (ORDER BY NO DESC) AS rnum
-                        <!-- NO필드를 기준으로 내림차순 정렬하여 각 행에 순서번호(rum) 할당 -->
+		<!--	
+		SELECT
+      		BOARD2.*
+		FROM(
+        	SELECT
+            	COUNT(*) OVER() AS totalRecordCount,
+            	BOARD1.*
+        	FROM(
+            	SELECT
+                	ROW_NUMBER() OVER (ORDER BY NO DESC) AS rnum
                    
-                      ,NO
-                      ,NAME
-                      ,GENDER
-                      ,DEPARTMENT
-                      ,SALARY
-                      ,HIREDATE
+               		,EMP_NO
+                    ,EMP_NM
+                    ,EMP_GENDER
+                    ,DEP_NM
+                    ,EMP_SALARY
+                    ,EMP_HIREDATE
                       
-                   FROM   EMPLOYEE
-                   WHERE  1=1 
+            	FROM   EMPLOYEE
+                WHERE  1=1 
                    
-                   <if test="name != null and name != '' ">
-                      AND NAME LIKE '%' || #{name} || '%'
-                   </if>
+                	<if test="empNm != null and empNm != '' ">
+                    	AND EMP_NM LIKE '%' || #{empNm} || '%'
+                  	</if>
                   
-                ) BOARD1 <!-- 페이지네이션을 위해 필요한 전체 레코드(totalRecordCount)수와 원하는 데이터 검색 -->
-         ) BOARD2 <!-- 페이지네이션을 구현하기 위한 서브쿼리 -->
-         WHERE   BOARD2.RNUM BETWEEN #{start} AND #{end}
+            ) BOARD1	
+		) BOARD2 		
+       	WHERE BOARD2.RNUM BETWEEN #{start} AND #{end}
+       	-->
+       SELECT
+      		BOARD2.*
+		FROM(
+        	SELECT
+            	COUNT(*) OVER() AS totalRecordCount,
+            	BOARD1.*
+        	FROM( 
+				SELECT 
+					ROW_NUMBER() OVER (ORDER BY EMP_NO DESC) AS rnum
+					
+					,A.EMP_NO
+					,A.EMP_NM
+					,A.EMP_GENDER
+					,B.DEP_NM
+					,A.EMP_SALARY
+					,A.EMP_HIREDATE
+				
+				FROM EMPLOYEE A
+				<!-- INNER JOIN DEPARTMENT -->
+				LEFT OUTER JOIN DEPARTMENT B
+				ON A.DEP_CODE = B.DEP_CODE
+
+				WHERE 1=1
+               		
+               		<if test="depCode != null and depCode != '' ">
+                   		AND DEP_CODE LIKE '%' || #{depCode} || '%'
+                  	</if>
+                  
+            ) BOARD1	
+		) BOARD2 		
+       	WHERE BOARD2.RNUM BETWEEN #{start} AND #{end}
          
 	</select>
 

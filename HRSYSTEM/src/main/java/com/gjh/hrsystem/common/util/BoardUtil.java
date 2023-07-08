@@ -79,8 +79,8 @@ public class BoardUtil {
 		returnMap.put("lastPageNoOnPageList", lastPageNoOnPageList);
 		returnMap.put("prevPageNoOnPageList", prevPageNoOnPageList);
 		returnMap.put("nextPageNoOnPageList", nextPageNoOnPageList);
-		returnMap.put("startPageNoOnPageList", 1); //처음 페이지
-		returnMap.put("endPageNoOnPageList", totalPageCount); //끝 페이지
+		returnMap.put("startPageNoOnPageList", 1); 				//처음 페이지
+		returnMap.put("endPageNoOnPageList", totalPageCount); 	//끝 페이지
 				
 		return returnMap;
 	}

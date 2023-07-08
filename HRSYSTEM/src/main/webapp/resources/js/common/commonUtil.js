@@ -1,7 +1,7 @@
 /**
  * 공통함수
  */
-$(document).ready(function(){
+$(document).ready(function() {
 
 });
 
@@ -14,7 +14,6 @@ function movePage(frmId, pageNo){
 	$frm.target = frmId;
 	$frm.submit();
 }
-
 
 //게시판 상세조회 이동
 function moveDtlPage(frmId, actionUrl, contentId){
@@ -32,7 +31,6 @@ function movePageForAjax(frmId, pageNo, ajaxfn){
 
 	$frm.find('input[name=currentPageNo]').val(pageNo);
 	eval(ajaxfn+'()');
-
 }
 
 //게시판 검색버튼 
@@ -41,5 +39,4 @@ function searchBtn(url) {
 	var $form = $('#searchForm');
 	$form.attr('action', url);
 	$form.submit();
-	
 }

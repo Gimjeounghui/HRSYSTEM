@@ -4,64 +4,74 @@ import com.gjh.hrsystem.common.vo.DefaultVO;
 
 public class EmployeeVO extends DefaultVO {
 	
-	private int no; 			// 번호
+	private int empNo; 			// 번호
 	
-	private String name; 		// 이름
+	private String empNm; 		// 이름
 	
-	private char gender; 		// 성별
+	private char empGender; 	// 성별
 	
-	private String department; 	// 소속부서
+	private String depCode; 	// 부서코드
+
+	private String depNm; 		// 부서명
 	
-	private int salary; 		// 급여
+	private int empSalary; 		// 급여
 	
-	private String hireDate; 	// 입사일
+	private String empHireDate;	// 입사일
 
 	
-	public int getNo() {
-		return no;
+	public int getEmpNo() {
+		return empNo;
 	}
 
-	public void setNo(int no) {
-		this.no = no;
+	public void setEmpNo(int empNo) {
+		this.empNo = empNo;
 	}
 
-	public String getName() {
-		return name;
+	public String getEmpNm() {
+		return empNm;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setEmpNm(String empNm) {
+		this.empNm = empNm;
 	}
 
-	public char getGender() {
-		return gender;
+	public char getEmpGender() {
+		return empGender;
 	}
 
-	public void setGender(char gender) {
-		this.gender = gender;
+	public void setEmpGender(char empGender) {
+		this.empGender = empGender;
 	}
 
-	public String getDepartment() {
-		return department;
+	public String getDepCode() {
+		return depCode;
 	}
 
-	public void setDepartment(String department) {
-		this.department = department;
+	public void setDepCode(String depCode) {
+		this.depCode = depCode;
+	}
+	
+	public String getDepNm() {
+		return depNm;
 	}
 
-	public int getSalary() {
-		return salary;
+	public void setDepNm(String depNm) {
+		this.depNm = depNm;
 	}
 
-	public void setSalary(int salary) {
-		this.salary = salary;
+	public int getEmpSalary() {
+		return empSalary;
 	}
 
-	public String getHireDate() {
-		return hireDate;
+	public void setEmpSalary(int empSalary) {
+		this.empSalary = empSalary;
 	}
 
-	public void setHireDate(String hireDate) {
-		this.hireDate = hireDate;
+	public String getEmpHireDate() {
+		return empHireDate;
+	}
+
+	public void setEmpHireDate(String empHireDate) {
+		this.empHireDate = empHireDate;
 	}
 }

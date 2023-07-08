@@ -40,6 +40,7 @@ public class EmployeeController {
 			int totalRecordCount = 0; 					// 총 게시물 건수
 			int recordCountPerPage = 10; 				// 한 페이지당 게시되는 게시물 건 수
 			int currentPageNo = vo.getCurrentPageNo(); 	// 현재 클릭한 page 번호
+			// 내 생각 틀릴 수도 있음 정확한거 아님: pageSize도 현재페이지처럼 유동적인 데이터처리를 위해 vo의 값을 get 해오는데 데이터를 어디서 받아오는지 확인불가
 			int pageSize = vo.getPageSize(); 			// 페이지 리스트에 게시되는 페이지 건수
 
 			// 게시물 조회 범위 연산
@@ -52,24 +53,22 @@ public class EmployeeController {
 			// 전체 검색 결과
 			employeeList = employeeService.selectEmployeeList(vo);
 
-			// 검색된 결과가 있는지 체크
-			if (employeeList.size() > 0) {
-				// 전체 검색 결과 게시물 건 수. TotalRecordCount : 총 게시물 건
+			if(employeeList.size() > 0) {
+				
 				totalRecordCount = employeeList.get(0).getTotalRecordCount();
 			}
-
+			
 			// pager기능 모든 계산식 결과 정보 map에 담기
-			HashMap<String, Integer> pagerMap = boardUtil.calcBoardPagerElement(currentPageNo, totalRecordCount, recordCountPerPage, pageSize); // returnMap
+			HashMap<String, Integer> pagerMap = boardUtil.calcBoardPagerElement(currentPageNo, totalRecordCount, recordCountPerPage, pageSize);
 
 			/* 게시판 END */
 
-			// model 세팅
 			model.addAttribute("employeeList", employeeList);
-			model.addAttribute("pagerMap", pagerMap); // 게시판 계산식 map
-
+			model.addAttribute("pagerMap", pagerMap); // 게시판 계산식 Map
+			
 		} catch (Exception e) {
 
-			logger.info(e.getMessage());
+			// logger.info(e.getMessage());
 			e.printStackTrace();
 		}
 

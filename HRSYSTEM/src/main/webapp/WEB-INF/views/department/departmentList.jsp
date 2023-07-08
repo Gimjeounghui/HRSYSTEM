@@ -5,14 +5,14 @@
 	<script type="text/javascript">
 	
 		$(function() {
-	
+			
 		});
 		
 		// 검색버튼 눌렀을 시
 		function searchBtn() {
 	
 			var $form = $('#searchForm');
-			$form.attr('action','/employee/employeeList');
+			$form.attr('action','/department/departmentList');
 			$form.submit();
 		}
 	
@@ -29,7 +29,7 @@
 	            </a>
 	            <br><br>
 	        	<div class="main_content">
-	            	<p>사원검색</p>
+	            	<p>부서검색</p>
 	                <div class="container">
 	                
 	                	<!-- 검색박스 부분 -->
@@ -41,19 +41,19 @@
 										<input type="hidden" name="currentPageNo" id="currentPageNo" value="${pagerMap['currentPageNo']}">
 								        
 								        <div class="form-group">
-							          		<label for="search1"></label>
+							          		<label for="search1">검색조건1:</label>
 								          	<select class="form-control" id="search1">
-									            <option>이름</option>
-									            <option>부서명</option>
-									            <option>급여</option>
+									            <option>옵션 1</option>
+									            <option>옵션 2</option>
+									            <option>옵션 3</option>
 								          	</select>
 								        </div>
 								        <div class="form-group">
-									        <label for="search2"></label>
+									        <label for="search2">검색조건2:</label>
 									        <input type="text" class="form-control" id="search2">
 								        </div>
 								        
-								        <button type="button" class="btn btn-primary" onclick="searchBtn('/employee/employeeList')">검색</button>
+								        <button type="button" class="btn btn-primary" onclick="searchBtn('/department/departmentList')">검색</button>
 							        </form>
 						      	</div>
 						    </div>
@@ -67,29 +67,25 @@
 							        	<!-- 게시판 컬럼 -->
 							        	<thead>
 								            <tr>
-							            		<th scope="col" class="th-num">번호</th>
-												<th scope="col" class="th-title">이름</th>
-												<th scope="col" class="th-gender">성별</th>
-												<th scope="col" class="th-department">부서명</th>
-												<th scope="col" class="th-salary">급여</th>
-												<th scope="col" class="th-hireDate">입사일</th>
+							            		<th scope="col" class="th-depId">부서아이디</th>
+												<th scope="col" class="th-depCode">부서코드</th>
+												<th scope="col" class="th-depNm">부서명</th>
+												<th scope="col" class="th-depUpdatedAte">수정일</th>
 								            </tr>
 							          	</thead>
 							          	<!-- 게시판 데이터 부분 -->
 							          	<tbody>
 								          	<!-- fn:legth(item) = item이 배열이나 컬렉션이면 요소의 개수, 문자열이면 문자의 갯수 반환 -->
-											<c:if test="${fn:length(employeeList) == 0}">
-												<td align="center" colspan="6">조회된 항목이없습니다.</td>
+											<c:if test="${fn:length(departmentList) == 0}">
+												<td align="center" colspan="4">조회된 항목이없습니다.</td>
 											</c:if>
 				
-											<c:forEach var="list" items="${employeeList}">
+											<c:forEach var="list" items="${departmentList}">
 												<tr>
-													<td>${list.empNo}</td>
-													<td>${list.empNm}</td>
-													<td>${list.empGender}</td>
+													<td>${list.depId}</td>
+													<td>${list.depCode}</td>
 													<td>${list.depNm}</td>
-													<td>${list.empSalary}</td>
-													<td>${list.empHireDate}</td>
+													<td>${list.depUpdatedAte}</td>
 												</tr>
 											</c:forEach>
 							          	</tbody>
