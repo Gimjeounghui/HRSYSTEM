@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gjh.hrsystem.branch.service.BranchMapper">
+
+	<select id="selectBranchList" resultType="branchVO" parameterType="branchVO">
+	
+		SELECT
+	      		BOARD2.*
+			FROM(
+	        	SELECT
+	            	COUNT(*) OVER() AS totalRecordCount,
+	            	BOARD1.*
+	        	FROM( 
+					SELECT 
+						ROW_NUMBER() OVER (ORDER BY BNH_NO ASC) AS rnum
+						
+						,A.BNH_NO
+						,A.BNH_LOCATION
+						,A.DEP_CODE
+						,B.DEP_NM
+						,A.BNH_LANDLINE
+						,A.BNH_BUSINESS_HOURS
+					
+					FROM BRANCH A
+					LEFT OUTER JOIN DEPARTMENT B
+					ON A.DEP_CODE = B.DEP_CODE
+	
+					WHERE 1=1
+					
+	               		<if test='searchSelect1 != null and searchSelect1 != "" '>
+							<choose>
+								<when test='searchSelect1 == "A" '>
+									/* 지점위치 검색 */
+	                   				AND BNH_LOCATION LIKE '%' || #{searchInput1} || '%'		
+								</when>
+								<when test='searchSelect1 == "B" '>
+									/* 부서명 검색 */
+									AND DEP_NM LIKE '%' || #{searchInput1} || '%' 
+								</when>
+								<otherwise>
+								</otherwise>
+							</choose>
+	               		
+	                  	</if>
+	                  
+	            ) BOARD1	
+			) BOARD2 		
+	       	WHERE BOARD2.RNUM BETWEEN #{start} AND #{end}
+	
+	</select>
+
+</mapper>

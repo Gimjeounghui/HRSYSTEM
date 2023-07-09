@@ -8,6 +8,4 @@ public interface EmployeeService {
 	
 	public List<EmployeeVO> selectEmployeeList(EmployeeVO vo);
 	
-	public EmployeeVO selectValueRslt(EmployeeVO vo);
-
 }

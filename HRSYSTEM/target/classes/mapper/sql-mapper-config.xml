@@ -17,6 +17,9 @@
 		<!-- departmentVO 별칭 -->
 		<typeAlias alias="departmentVO" type="com.gjh.hrsystem.department.vo.DepartmentVO"/>
 
+		<!-- branchVO 별칭 -->
+		<typeAlias alias="branchVO" type="com.gjh.hrsystem.branch.vo.BranchVO"/>
+
     </typeAliases>
 
 </configuration>

@@ -8,6 +8,6 @@
    	<ul class="nav nav-sidebar">
     	<li><a href="/employee/employeeList">사원목록</a></li>
         <li><a href="/department/departmentList">부서목록</a></li>
-       	<li><a href="#">영업점정보</a></li>
+       	<li><a href="/branch/branchList">영업점정보</a></li>
     </ul>
 </div>
