@@ -6,16 +6,8 @@
 	
 		$(function() {
 			
-			
 		});
-	
-		// 검색버튼 눌렀을 시
-		function searchBtn() {
-			
-			var $form = $('#searchForm');
-			$form.attr('action','/branch/branchList');
-			$form.submit();
-		}
+
 	</script>
 	
 <body>

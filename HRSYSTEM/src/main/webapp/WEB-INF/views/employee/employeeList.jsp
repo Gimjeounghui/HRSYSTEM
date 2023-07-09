@@ -7,14 +7,6 @@
 		$(function() {
 	
 		});
-		
-		// 검색버튼 눌렀을 시(검색조건과 값을 가져가야함)
-		function searchBtn() {
-			
-			var $form = $('#searchForm');
-			$form.attr('action','/employee/employeeList');
-			$form.submit();
-		}
 	
 	</script>
 

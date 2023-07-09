@@ -9,3 +9,4 @@ public interface DepartmentService {
 	public List<DepartmentVO>selectDepartmentList(DepartmentVO vo);
 	
 }
+

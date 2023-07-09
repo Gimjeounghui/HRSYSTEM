@@ -8,14 +8,6 @@
 			
 		});
 		
-		// 검색버튼 눌렀을 시
-		function searchBtn() {
-	
-			var $form = $('#searchForm');
-			$form.attr('action','/department/departmentList');
-			$form.submit();
-		}
-	
 	</script>
 
 <body>

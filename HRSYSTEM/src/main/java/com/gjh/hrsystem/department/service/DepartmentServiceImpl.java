@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gjh.hrsystem.department.vo.DepartmentVO;
+
 @Service("departmentService")
 public class DepartmentServiceImpl implements DepartmentService {
 	
@@ -18,3 +19,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 		return departmentMapper.selectDepartmentList(vo);
 	}
 }
+
+
+
+

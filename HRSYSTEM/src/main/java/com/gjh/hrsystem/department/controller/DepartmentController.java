@@ -67,3 +67,4 @@ public class DepartmentController {
 		return "/department/departmentList.tiles";
 	}
 }
+

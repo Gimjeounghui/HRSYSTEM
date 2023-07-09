@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 });
 
-//게시판 페이지 이동
+// 게시판 페이지 이동
 function movePage(frmId, pageNo){
 
 	console.log("공통 movePage");
@@ -15,7 +15,7 @@ function movePage(frmId, pageNo){
 	$frm.submit();
 }
 
-//게시판 상세조회 이동
+// 게시판 상세조회 이동
 function moveDtlPage(frmId, actionUrl, contentId){
 	var $frm = $('#'+frmId);
 
@@ -25,7 +25,7 @@ function moveDtlPage(frmId, actionUrl, contentId){
 	$frm.submit();
 }
 
-//게시판 페이지 이동 (ajax 방식으로 할때)
+// 게시판 페이지 이동 (ajax 방식으로 할때)
 function movePageForAjax(frmId, pageNo, ajaxfn){
 	var $frm = $('form[name='+frmId+']');
 
@@ -33,10 +33,12 @@ function movePageForAjax(frmId, pageNo, ajaxfn){
 	eval(ajaxfn+'()');
 }
 
-//게시판 검색버튼 
+// 게시판 검색버튼 
 function searchBtn(url) {
 	
 	var $form = $('#searchForm');
 	$form.attr('action', url);
 	$form.submit();
 }
+
+

@@ -4,10 +4,12 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 
 <div class="col-md-2">
-	<h4 class="sidebar-title">왼쪽 사이드바 메뉴</h4>
+	<h4 class="sidebar-title">회사정보</h4>
    	<ul class="nav nav-sidebar">
     	<li><a href="/employee/employeeList">사원목록</a></li>
         <li><a href="/department/departmentList">부서목록</a></li>
        	<li><a href="/branch/branchList">영업점정보</a></li>
     </ul>
 </div>
+
+

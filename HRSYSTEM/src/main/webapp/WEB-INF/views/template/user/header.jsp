@@ -16,7 +16,7 @@
     	</div>
     	<div class="collapse navbar-collapse" id="navbar-collapse">
       		<ul class="nav navbar-nav">
-		        <li class="active"><a href="#">회사정보</a></li>
+		        <li class="active"><a href="/employee/employeeList">회사정보</a></li>
 		        <li><a href="#">근무일정</a></li>
 		        <li><a href="#">출퇴근기록</a></li>
 		        <li><a href="#">휴가관리</a></li>

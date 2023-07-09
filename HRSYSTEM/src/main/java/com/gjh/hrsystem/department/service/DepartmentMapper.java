@@ -9,3 +9,4 @@ public interface DepartmentMapper {
 	public List<DepartmentVO> selectDepartmentList(DepartmentVO vo);
 	
 }
+

@@ -19,3 +19,4 @@ public class BranchServiceImpl implements BranchService {
 		return branchMapper.selectBranchList(vo);
 	}
 }
+
